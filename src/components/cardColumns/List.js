@@ -7,7 +7,7 @@ function List(props) {
     <Container className="mt-3 d-flex">
       <Row>
         {props.data.map((item) => (
-          <Col md={4} key={item._id}>
+          <Col md={4} key={item.id}>
             <HomeCardColumns item={item}></HomeCardColumns>
           </Col>
         ))}

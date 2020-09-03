@@ -6,12 +6,18 @@ import Sidebar from '../components/Sidebar';
 import HomePagination from '../components/paginations/HomePagination';
 import HomeCarousel from '../components/HomeCarousel';
 import List from '../components/cardColumns/List';
+import AboutUsPagination from '../components/paginations/AboutUsPagination';
+import { useLocation } from 'react-router-dom';
 
 const Home = (props) => {
+    const location = useLocation();
 
     useEffect(() => {
-        props.fetchData();
-    }, []);
+        const search = new URLSearchParams(location.search);
+        const page = search.get("page");
+
+        props.fetchData(page || 0);
+    }, [location]);
 
     if(props.error){
         return(
@@ -25,7 +31,7 @@ const Home = (props) => {
             <HomeCarousel />
             <Sidebar/>
             <List data = {props.data}/>
-            <HomePagination className="HomeMainPagination"/>
+            <AboutUsPagination/>
         </div>
     );
 }
@@ -37,7 +43,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: () => dispatch(fetchData())
+        fetchData: (page) => dispatch(fetchData(page))
     }
 }
 

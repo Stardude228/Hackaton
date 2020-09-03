@@ -10,18 +10,13 @@ import Layout from '../components/Layout';
 //? Pages
 const Home = React.lazy(() => import('../pages/Home'));
 const AboutUs = React.lazy(() => import('../pages/AboutUs'));
-// const AboutUs1 = React.lazy(() => import('../pages/AboutUsPages/AboutUs1'));
-// const AboutUs2 = React.lazy(() => import('../pages/AboutUsPages/AboutUs2'));
-// const AboutUs3 = React.lazy(() => import('../pages/AboutUsPages/AboutUs3'));
-// const AboutUs4 = React.lazy(() => import('../pages/AboutUsPages/AboutUs4'));
-const Sale = React.lazy(() => import('./navbar/sale/Sale'));
-const Contact = React.lazy(() => import('./navbar/contact/Contact'));
-const Blog = React.lazy(() => import('./navbar/blog/Blog'));
+const Login = React.lazy(() => import('../pages/LoginPages/Login'));
+const Register = React.lazy(() => import('../pages/LoginPages/Register'));
 
 //? Products
-const ProductDetail = React.lazy(() => import('../pages/ProductDetail'));
+// const ProductDetail = React.lazy(() => import('../pages/ProductDetail'));
 
-function Routes(props) {
+function Routes() {
     return (
         <BrowserRouter>
             <Suspense fallback = {<div>Loading...</div>}>
@@ -33,37 +28,23 @@ function Routes(props) {
 
                     <Route exact path="/">
                         <Layout>    
-                            <Home props = {props} />
+                            <Home/>
                         </Layout>
                     </Route>
 
-                    <Route exact path="/about-us/:id">
+                    <Route exact path="/about-us">
                         <Layout>
                             <AboutUs/>
                         </Layout>
                     </Route>
-
-                    <Route exact path="/blog">
+                    <Route exact path="/login">
                         <Layout>
-                            <Blog/>
+                            <Login/>
                         </Layout>
                     </Route>
-
-                    <Route exact path="/contact">
+                    <Route exact path="/register">
                         <Layout>
-                            <Contact/>
-                        </Layout>
-                    </Route>
-
-                    <Route exact path="/sale">
-                        <Layout>
-                            <Sale/>
-                        </Layout>
-                    </Route>
-
-                    <Route exact path="/products/:slug">
-                        <Layout>
-                            <ProductDetail/>
+                            <Register/>
                         </Layout>
                     </Route>
 

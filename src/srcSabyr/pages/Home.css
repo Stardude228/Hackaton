@@ -7,7 +7,6 @@
     background-attachment: fixed;
     margin: 0 auto;
     z-index: -1;
-    padding-top: 50px;
 }
 
 
@@ -66,28 +65,9 @@
     margin: 0 auto;
 }
 
-.upperCards{
-    background-color: #9C9BA0 !important;
-    border-color: #9C9BA0 !important;
-}
-
 .HomeMainPagination{
-    /* display: inline-block;
-    margin: 0 auto; */
-    /* margin-left: 650px;   */
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-}
-.HomeMainPagination .pagination{
-    padding: 0;
-    margin: 0;
+    margin-left: 400px;
 }
 .HomePaginationLinks{
     color: black;
-}
-
-
-.AboutUsMainDiv{
-    margin-top: 80px !important;
 }

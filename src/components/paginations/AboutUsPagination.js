@@ -4,42 +4,34 @@ import {
     PaginationItem,
     PaginationLink,
 } from 'reactstrap';
+import { Link, useLocation } from 'react-router-dom';
 
 
 function AboutUsPagination() {
+    const location = useLocation();
+    const search = new URLSearchParams(location.search);
+    // console.log(search.get("page"))
+    const createPaginations = ()=>{
+        const total = parseInt(localStorage.getItem("totalCount"));
+        let arr = [];
+        for(let i = 1; i <= Math.round(total/6); i++){
+            arr.push(
+                <PaginationItem key={i + "-pagination-item"} active={search.get("page") === i.toString()}>
+                    <Link to={`/?page=${i}`}>
+                        <PaginationLink className="HomePaginationLinks">
+                            {i}
+                        </PaginationLink>
+                    </Link>
+                </PaginationItem>
+            )
+        }
+        return arr;
+    }
     return (
         <div>
             <Pagination aria-label="Page navigation example" className="HomeMainPagination">
 
-                <PaginationItem>
-                    <PaginationLink href="/" className="HomePaginationLinks">
-                        1
-                    </PaginationLink>
-                </PaginationItem>
-
-                <PaginationItem active>
-                    <PaginationLink href="/about-us" className="HomePaginationLinks">
-                        2
-                    </PaginationLink>
-                </PaginationItem>
-
-                <PaginationItem>
-                    <PaginationLink href="/about-us/1" className="HomePaginationLinks">
-                        3
-                    </PaginationLink>
-                </PaginationItem>
-
-                <PaginationItem>
-                    <PaginationLink href="/about-us/2" className="HomePaginationLinks">
-                        4
-                    </PaginationLink>
-                </PaginationItem>
-
-                <PaginationItem>
-                    <PaginationLink href="/about-us/3" className="HomePaginationLinks">
-                        5
-                    </PaginationLink>
-                </PaginationItem>
+                {createPaginations(10)}
 
             </Pagination>
         </div>
