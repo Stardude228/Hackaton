@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Ferrari",
+      "price": "100200$",
+      "image": "https://www.market2cars.com/wp-content/uploads/2019/11/960x0.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Bugatti",
+      "price": "100200$",
+      "image": "https://www.market2cars.com/wp-content/uploads/2019/11/960x0.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Lamborghini",
+      "price": "100200$",
+      "image": "https://www.market2cars.com/wp-content/uploads/2019/11/960x0.jpg"
+    }
+  ]
+}

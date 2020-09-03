@@ -1,0 +1,19 @@
+.HeaderMainDiv {
+    background-color: rgba(167, 164, 164, 0.856) !important;
+    color: white;
+}
+.HeaderNavbarBrand {
+    color: white !important;
+    align-items: center;
+}
+
+.HeaderLogo {
+    width: 25px;
+    margin-bottom: 5px;
+}
+.HeaderNavlinks {
+    color: white !important;
+} 
+#basic-nav-dropdown {
+    color: white !important;
+} 
