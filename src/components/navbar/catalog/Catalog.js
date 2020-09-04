@@ -25,18 +25,18 @@ function Catalog() {
             <MDBCard cascade narrow ecommerce>
               <MDBCardImage
                 cascade
-                src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/1.jpg'
+                src='https://cdnimg.rg.ru/img/content/183/62/20/53_d_850.jpg'
                 top
                 alt='sample photo'
                 overlay='white-slight'
               />
               <MDBCardBody cascade className='text-center'>
                 <a href='#!' className='grey-text'>
-                  <h5>Denim</h5>
+                  <h5>НАРОДНАЯ МАЩИНЕ</h5>
                 </a>
                 <MDBCardTitle>
                   <strong>
-                    <a href='#!'>Denim trousers</a>
+                    <a href='#!'>Mercedes</a>
                   </strong>
                 </MDBCardTitle>
                 <ul className='rating'>
@@ -59,7 +59,7 @@ function Catalog() {
                 <MDBCardText>Neque porro quisquam est, qui dolorem ipsum quia dolor sit.</MDBCardText>
                 <MDBCardFooter className='px-1'>
                   <span className='float-left font-weight-bold'>
-                    <strong>49$</strong>
+                    <strong>44509$</strong>
                   </span>
                   <span className='float-right'>
                     <MDBTooltip domElement placement='top'>
@@ -83,18 +83,18 @@ function Catalog() {
             <MDBCard cascade narrow ecommerce>
               <MDBCardImage
                 cascade
-                src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/2.jpg'
+                src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Audi_A7_Sportback_Genf_2018.jpg/1200px-Audi_A7_Sportback_Genf_2018.jpg'
                 top
                 alt='sample photo'
                 overlay='white-slight'
               />
               <MDBCardBody cascade className='text-center'>
                 <a href='#!' className='grey-text'>
-                  <h5>Shoes</h5>
+                  <h5>Business Car</h5>
                 </a>
                 <MDBCardTitle>
                   <strong>
-                    <a href='#!'>High heels</a>
+                    <a href='#!'>AUDI</a>
                   </strong>
                 </MDBCardTitle>
                 <ul className='rating'>
@@ -117,7 +117,7 @@ function Catalog() {
                 <MDBCardText>Neque porro quisquam est, qui dolorem ipsum quia dolor sit.</MDBCardText>
                 <MDBCardFooter className='px-1'>
                   <span className='float-left font-weight-bold'>
-                    <strong>89$</strong>
+                    <strong>89255$</strong>
                   </span>
                   <span className='float-right'>
                     <MDBTooltip domElement placement='top'>
@@ -143,18 +143,18 @@ function Catalog() {
             <MDBCard cascade narrow ecommerce>
               <MDBCardImage
                 cascade
-                src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/4.jpg'
+                src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Lamborghini_Huracan_LP610-4_%2816728125723%29.jpg/1200px-Lamborghini_Huracan_LP610-4_%2816728125723%29.jpg'
                 top
                 alt='sample photo'
                 overlay='white-slight'
               />
               <MDBCardBody cascade className='text-center'>
                 <a href='#!' className='grey-text'>
-                  <h5>Outwear</h5>
+                  <h5>SuperCar</h5>
                 </a>
                 <MDBCardTitle>
                   <strong>
-                    <a href='#!'>Brown coat</a>
+                    <a href='#!'>Lamborghini</a>
                   </strong>
                 </MDBCardTitle>
                 <ul className='rating'>
@@ -177,7 +177,7 @@ function Catalog() {
                 <MDBCardText>Neque porro quisquam est, qui dolorem ipsum quia dolor sit.</MDBCardText>
                 <MDBCardFooter className='px-1'>
                   <span className='float-left font-weight-bold'>
-                    <strong>59$</strong>
+                    <strong>59966$</strong>
                   </span>
                   <span className='float-right'>
                     <MDBTooltip domElement placement='top'>
@@ -201,18 +201,18 @@ function Catalog() {
             <MDBCard cascade narrow ecommerce>
               <MDBCardImage
                 cascade
-                src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/3.jpg'
+                src='https://www.ixbt.com/img/n1/news/2019/11/4/dims_large.jpg'
                 top
                 alt='sample photo'
                 overlay='white-slight'
               />
               <MDBCardBody cascade className='text-center'>
                 <a href='#!' className='grey-text'>
-                  <h5>Blouses</h5>
+                  <h5>SpeedCar</h5>
                 </a>
                 <MDBCardTitle>
                   <strong>
-                    <a href='#!'>Shirt</a>
+                    <a href='#!'>B-M-W</a>
                   </strong>
                 </MDBCardTitle>
                 <ul className='rating'>
@@ -235,7 +235,7 @@ function Catalog() {
                 <MDBCardText>Neque porro quisquam est, qui dolorem ipsum quia dolor sit.</MDBCardText>
                 <MDBCardFooter className='px-1'>
                   <span className='float-left font-weight-bold'>
-                    <strong>119$</strong>
+                    <strong>11900$</strong>
                   </span>
                   <span className='float-right'>
                     <MDBTooltip domElement placement='top'>
