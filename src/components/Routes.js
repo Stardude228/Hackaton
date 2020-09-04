@@ -20,6 +20,10 @@ const Lamborgini = React.lazy(() => import('./navbar/catalog/cars/Lamborgini'));
 const Catalog = React.lazy(() => import('./navbar/catalog/Catalog'));
 const About = React.lazy(() => import('./navbar/aboutUs/About'));
 const Payment = React.lazy(() => import('./navbar/payment/Payment'));
+const Contacts = React.lazy(() => import('./navbar/contact/Contacts'));
+const Confident = React.lazy(() => import('../pages/Confident'));
+const Soon = React.lazy(() => import('./navbar/soon/Soon'));
+
 
 //? Products
 const ProductDetail = React.lazy(() => import('../pages/ProductDetail'));
@@ -110,6 +114,21 @@ function Routes(props) {
                             <Payment />
                         </Layout>
                     </Route>
+                    <Route exact path="/soon">
+                        <Layout>
+                            <Soon />
+                        </Layout>
+                    </Route>
+                    <Route exact path="/contacts">
+                        <Layout>
+                            <Contacts />
+                        </Layout>
+                    </Route>
+                    <Route exact path="/confident">
+                        <Layout>
+                            <Confident />
+                        </Layout>
+                    </Route>
 
                 </Switch>
             </Suspense>
@@ -118,4 +137,3 @@ function Routes(props) {
 }
 
 export default Routes
-

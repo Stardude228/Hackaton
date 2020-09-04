@@ -1,9 +1,10 @@
 import React from 'react'
 import './Footer.css'
 import { Container } from 'reactstrap'
-import { Link, BrowserRouter } from 'react-router-dom'
+import { Link, BrowserRouter, useHistory } from 'react-router-dom'
 
 function Footer() {
+    const history=useHistory()
     return (
         <div>
             <BrowserRouter>
@@ -12,114 +13,100 @@ function Footer() {
                         <ul className="footer-specs">
                             <li className="spec">
                                 <i className="icon icon-cycle"></i>
-                                Возможность легко обменять
+                                Opportunity of easy changing (if it is not working)
                             </li>
                             <li className="spec">
                                 <i className="icon icon-repair"></i>
-                                Бесплатная починка
+                                Free fixing
                             </li>
                             <li className="spec">
                                 <i className="icon icon-delivery"></i>
-                                Быстрая и Бесплатная доставка</li>
+                                Fast and furios (delivery)</li>
                             <li className="spec">
                                 <i className="icon icon-wallet"></i>
-                                Оплата наличными
+                                Cash payment
                             </li>
                         </ul>
                     </div>
                     <nav className="footer-menu mt-5">
-                        <div className="footer-group">
-                            <ul>
-                                <h4 className="footer-title">О нас</h4>
-                                <li>
-                                    <Link to="#">О нас</Link>
-                                </li>
-                                <li>
-                                    <Link to="#">Информация о поставщике машин</Link>
-                                </li>
-                                <li>
-                                    <Link to="#">Информация и правила конфиденциальности в отношении личных данных</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="footer-group">
-                            <ul>
-                                <h4 className="footer-title">Общее</h4>
-                                <li>
-                                    <Link to="#">Оплата</Link>
-                                </li>
-                                <li>
-                                    <Link to="#">Правила обмена и возврата</Link>
-                                </li>
-                                <li>
-                                    <Link to="#">Наши магазины</Link>
-                                </li>
-                                <li>
-                                    <Link to="#">Акции и Промо</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="footer-group">
-                            <ul>
-                                <h4 className="footer-title">Категории</h4>
-                                <li>
-                                    <Link to="#">Mercedes</Link>
-                                </li>
-                                <li>
-                                    <Link to="#">Audi</Link>
-                                </li>
-                                <li>
-                                    <Link to="#">Lamborghini</Link>
-                                </li>
-                                <li>
-                                    <Link to="#">Bugatti</Link>
-                                </li>
-                                <li>
-                                    <Link to="#">Ferrari</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="footer-group">
-                            <ul>
-                                <h4 className="footer-title">Личный кабинет</h4>
-                                <li>
-                                    <Link to="#">Вход в личный кабинет</Link>
-                                </li>
-                                <li>
-                                    <Link to="#">Регистрация</Link>
-                                </li>
-                                <li>
-                                    <Link to="#">Отследить заказ</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="footer-group">
-                            <ul>
-                                <h4 className="footer-title">Контакты</h4>
-                                <li>
-                                    0 (504) 98 22 11
-                                </li>
-                                <li>
-                                    Время работы: 08:00 - 19:00
-                                </li>
-                                <li>
-                                    <Link to="#">Адрес: ул.Жаманбаева 15а</Link>
-                                </li>
-                                <ul className="footer-social">
-                                    <li className="icon-social">
-                                        <Link to="#"><div className="social-facebook" /></Link>
+                        <div className="d-flex justify-content-center"> 
+                            <div className="footer-group">
+                                <ul>
+                                    <h4 className="footer-title">About us</h4>
+                                    <li>
+                                        <Link onClick = {() => history.replace("/about")}>About us</Link>
                                     </li>
-                                    <li className="icon-social">
-                                        <Link to="#"><div className="social-twitter" /></Link>
-                                    </li>
-                                    <li className="icon-social">
-                                        <Link to="#"><div className="social-instagram" /></Link>
-                                    </li>
-                                    <li className="icon-social">
-                                        <Link to="#"><div className="social-youtube" /></Link>
+                                    <li>
+                                        <Link onClick = {() => history.replace("/confident")}>Rules about confidational information</Link>
                                     </li>
                                 </ul>
-                            </ul>
+                            </div>
+                            <div className="footer-group">
+                                <ul>
+                                    <h4 className="footer-title">Common</h4>
+                                    <li>
+                                        <Link  onClick = { () => history.replace("/pay")}>Payment</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="#">The rules of returning and changing</Link>
+                                    </li>
+                                    <li>
+                                        <Link onClick = { () => history.replace("/catalog")}>Catalog</Link>
+                                    </li>
+                                    <li>
+                                        <Link onClick = { () => history.replace("/sale")}>Sales and Promo</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="footer-group">
+                                <ul>
+                                    <h4 className="footer-title">Category</h4>
+                                    <li>
+                                        <Link onClick = { () => history.replace("/bmw")}>BMW</Link>
+                                    </li>
+                                    <li>
+                                        <Link onClick = { () => history.replace("/audi")}>Audi</Link>
+                                    </li>
+                                    <li>
+                                        <Link onClick = { () => history.replace("/lamborgini")}>Lamborghini</Link>
+                                    </li>
+                                    <li>
+                                        <Link onClick = { () => history.replace("/soon")}>Bugatti</Link>
+                                    </li>
+                                    <li>
+
+                        <Link onClick = { () => history.replace("/soon")}>Ferrari</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="footer-group">
+                                <ul>
+                                    <h4 className="footer-title">Контакты</h4>
+                                    <li>
+                                        Monday - Saturday
+                                    </li>
+                                    <li>
+                                        Work time: 08:00 - 22:00
+                                    </li>
+                                    <li>
+                                    <Link onClick = { () => history.replace("/contacts")}>Contacts</Link>
+                                    </li>
+                                    <ul className="footer-social">
+                                        <li className="icon-social">
+                                            <a href="https://www.facebook.com/"><div className="social-facebook" /></a>
+                                        </li>
+                                        <li className="icon-social">
+                                            <a href="https://twitter.com/?lang=ru"><div className="social-twitter" /></a>
+                                        </li>
+                                        <li className="icon-social">
+                                            <a href="https://www.instagram.com/?hl=ru"><div className="social-instagram" /></a>
+                                        </li>
+                                        <li className="icon-social">
+                                            <a href="https://www.youtube.com/?hl=ru"><div className="social-youtube" /></a>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
                         </div>
                     </nav>
                 </Container>

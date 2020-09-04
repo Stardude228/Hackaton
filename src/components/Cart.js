@@ -14,18 +14,15 @@ import {
 import '../components/Header.css'
 import { useHistory } from 'react-router-dom'
 import Contact from './navbar/contact/Contact'
+import { connect } from 'react-redux'
 
-function Cart() {
+function Cart({cartItems: info}) {
 
     const history = useHistory();
     const [isOpen, setIsOpen] = useState(false)
-    let info = localStorage.getItem("cart");
-    info = JSON.parse(info)
-
-    let total = 0
+    let total = 0;
 
     function delData() {
-        localStorage.removeItem("cart")
         info = "null"
         setIsOpen(false);
     }
@@ -36,39 +33,42 @@ function Cart() {
         history.replace("/contact");
     }
 
-    //TODO To make local storage work without any bugs, and indicator for Cart
-
     return (
         <div className="Cart">
             <Button className="cartIconButton" onClick={() => setIsOpen(true)}><img className="cartIcon" src={cartSvg} /> Cart</Button>
+            <div className = "CartsNumberOfProducts">{info.length}</div>
                 <Modal isOpen={isOpen}>
                 <form onSubmit={() => delData()}>
-                    {info !== "null" && localStorage.getItem("cart") !== null ? (
+                    {info.length !== 0 ? (
                         <div>
-                            {info?.map((item) => (
+                            <Button className="w-100 btn btn-warning" onClick={() => setIsOpen(false)}>Close window</Button>
+                            <Contact props={info} onClick={() => orderCars()}>Order</Contact>
+                            {info.map((item) => (
                                 <Col key={item.id}>
                                     <Card className="HomeMainCard mt-4" item={item}>
-                                        <CardImg top width="100%" src={item.image} alt="Card image cap" />
                                         <CardBody>
-                                            <CardTitle><h3>{item.title}</h3></CardTitle>
-                                            <CardSubtitle><p><strong>Little info about {item.title}</strong></p></CardSubtitle>
-                                            <CardText>{item.comment}</CardText>
-                                            <CardText> Price {item.price} $</CardText>
+                                            <CardTitle><h3> You have selected {item.title}</h3></CardTitle>
                                             <CardText> Total {total += parseInt(item.price)} $</CardText>
                                         </CardBody>
                                     </Card>
                                 </Col>
                             ))}
-                            <Contact props={info} onClick={() => orderCars()}>Order</Contact>
                         </div>
-                    ) : (<div><Button className="w-100" onClick={() => setIsOpen(false)}>Close</Button> <h4>You do not have anyting yet</h4></div>)
+                    ) : (<div>
+                            <h4>You do not have anyting yet</h4>
+                            <Button className="w-100 btn btn-warning" onClick={() => setIsOpen(false)}>Close window</Button>
+                        </div>)
                     }
-                    <Button type="submit" >Remove</Button>
+                    <Button className="w-100 btn btn-danger">Remove all products from cart</Button>
                 </form>
                 </Modal>
         </div>
     )
 }
 
+const mapStateToProps = state => {
+    let { cartItems } = state.CartReducer
+    return { cartItems };
+}
 
-export default Cart
+export default connect(mapStateToProps, null)(Cart)
