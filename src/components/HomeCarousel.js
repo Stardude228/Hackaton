@@ -11,28 +11,35 @@ import {
 import Photo1 from '../assets/images/photo1.jpg'
 import Photo2 from '../assets/images/photo2.jpg'
 import Photo3 from '../assets/images/photo3.jpg'
+import { useHistory } from 'react-router-dom';
 
-const items = [
-    {
-        src: Photo2,
-        comment: <p className="HomeCarouselCommentFirst">Supercars</p>,
-        caption: <Button className="HomeCarouselButtonFirst">Get started</Button>
-    },
-    {
-        src: Photo1,
-        comment: <p className="HomeCarouselCommentSecond">Comfortable</p>,
-        caption: <Button className="HomeCarouselButtonSecond">Buy right now</Button>
-    },
-    {
-        src: Photo3,
-        comment: <p className="HomeCarouselCommentThird">Fast</p>,
-        caption: <Button className="HomeCarouselButtonThird">View details</Button>
-    }
-];
+
+
+
 
 const HomeCarousel = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
+    const history = useHistory()
+
+    const items = [
+        {
+            src: Photo2,
+            comment: <p className="HomeCarouselCommentFirst">Supercars</p>,
+            caption: <Button onClick = {() => history.replace("/?page=1")} onClick = {() => history.replace("/?page=1")} className="HomeCarouselButtonFirst">Get started</Button>
+        },
+        {
+            src: Photo1,
+            comment: <p className="HomeCarouselCommentSecond">Comfortable</p>,
+            caption: <Button onClick = {() => history.replace("/?page=2")} className="HomeCarouselButtonSecond">Buy right now</Button>
+        },
+        {
+            src: Photo3,
+            comment: <p className="HomeCarouselCommentThird">Fast</p>,
+            caption: <Button onClick = {() => history.replace("/?page=3")} className="HomeCarouselButtonThird">View details</Button>
+        }
+    ];
+
 
     const next = () => {
         if (animating) return;

@@ -1,19 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBIcon, MDBBtn, MDBInput } from "mdbreact";
-import { Container } from "reactstrap";
+import Axios from "axios";
+import { Col, Card, CardImg, CardBody, CardTitle } from "reactstrap";
 
-function Contact() {
-  return (
-    <Container>
-    <section className="my-5">
+
+
+function Contact(props) {
+
+  console.log(props.props)
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [advice, setAdvice] = useState("");
+  const [information, setInformation] = useState("");
+
+  function postData(id){
+    const data = {
+      id,
+      name,
+      email, 
+      subject,
+      advice,
+      information
+    }
+    if(name !== '' && email !== '') {
+    async function postOrder(id){
+        const res = await Axios.post(`${process.env.REACT_APP_API_URL_PRODUCTS}/orders`, data)
+    postOrder(id)
+  }}else{console.log("order has not been sent")}
+    
+}
+
+  return (    
+    <section className="mt-5">
       <h2 className="h1-responsive font-weight-bold text-center my-5">
-        Contact us
+        Order please!
       </h2>
-      <p className="text-center w-responsive mx-auto pb-5">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-        error amet numquam iure provident voluptate esse quasi, veritatis
-        totam voluptas nostrum quisquam eum porro a pariatur veniam.
-      </p>
+      
       <MDBRow>
         <MDBCol lg="5" className="lg-0 mb-4">
           <MDBCard>
@@ -33,6 +58,8 @@ function Contact() {
                   iconClass="grey-text"
                   type="text"
                   id="form-name"
+                  value={name}
+                  onChange={(e)=> setName(e.target.value)}
                 />
               </div>
               <div className="md-form">
@@ -42,6 +69,8 @@ function Contact() {
                   iconClass="grey-text"
                   type="text"
                   id="form-email"
+                  value={email}
+                  onChange={(e)=> setEmail(e.target.value)}
                 />
               </div>
               <div className="md-form">
@@ -51,19 +80,33 @@ function Contact() {
                   iconClass="grey-text"
                   type="text"
                   id="form-subject"
+                  value={subject}
+                  onChange={(e)=> setSubject(e.target.value)}
                 />
               </div>
               <div className="md-form">
                 <MDBInput
                   icon="pencil-alt"
-                  label="Icon Prefix"
+                  label="Your advice"
                   iconClass="grey-text"
                   type="textarea"
                   id="form-text"
+                  value={advice}
+                  onChange={(e)=> setAdvice(e.target.value)}
                 />
+                {props.props?.map((item) => (
+                        <div className="d-none" key={item.id}>
+                            <div item={item}>
+                              <p> image {item.image}</p> 
+                              <p> Title {item.title} </p>
+                              <p> Comment {item.comment}</p>
+                              <p> Price {item.price} $</p>
+                            </div>
+                        </div>
+                    ))}
               </div>
               <div className="text-center">
-                <MDBBtn color="light-blue">Submit</MDBBtn>
+                <MDBBtn onClick ={() => postData()} color="dark">Submit</MDBBtn>
               </div>
             </MDBCardBody>
           </MDBCard>
@@ -75,7 +118,7 @@ function Contact() {
             style={{ height: "400px" }}
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d76765.98321148289!2d-73.96694563267306!3d40.751663750099084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1525939514494"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93531.71079379348!2d74.49115431079855!3d42.89677465293526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec7d979079afb%3A0x9bb594c6a6f88787!2z0J_QtdGA0LLQvtC80LDQudGB0LrQuNC5INGA0LDQudC-0L0sINCR0LjRiNC60LXQug!5e0!3m2!1sru!2skg!4v1599171814146!5m2!1sru!2skg"
               title="This is a unique title"
               width="100%"
               height="100%"
@@ -89,8 +132,8 @@ function Contact() {
               <MDBBtn tag="a" floating color="blue" className="accent-1">
                 <MDBIcon icon="map-marker-alt" />
               </MDBBtn>
-              <p>New York, 94126</p>
-              <p className="mb-md-0">United States</p>
+              <p>Bishkek, 72000064</p>
+              <p className="mb-md-0">KYRGYZSTAN</p>
             </MDBCol>
             <MDBCol md="4">
               <MDBBtn tag="a" floating color="blue" className="accent-1">
@@ -104,13 +147,12 @@ function Contact() {
                 <MDBIcon icon="envelope" />
               </MDBBtn>
               <p>info@gmail.com</p>
-              <p className="mb-md-0">sale@gmail.com</p>
+              <p className="mb-md-0">azixmam@gmail.com</p>
             </MDBCol>
           </MDBRow>
         </MDBCol>
       </MDBRow>
     </section>
-    </Container>
   );
 }
 

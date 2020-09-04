@@ -7,14 +7,19 @@ const INIT_STATE = {
 const CartReducer = (state = INIT_STATE, action) => {
     switch (action.type) {
         case ADD_ITEM_TO_CART:
-            return { ...state, cartItems: [...state.cartItems, action.payload] };
-        case REMOVE_ITEM_FROM_CART:
-            const cartItems = [...state.cartItems];
-            const index = cartItems.findIndex((item) => item.slug === action.payload);
-            if(index !== -1){
-                cartItems.splice(index, 1)
-                return { ...state, cartItems };
+            if(true){ 
+                const cartItems = [...state.cartItems, action.payload]; 
+                localStorage.setItem("cart", JSON.stringify(cartItems)); 
+                return {...state, cartItems} 
             }
+        case REMOVE_ITEM_FROM_CART:
+            if(true){
+                const cartItems = [...state.cartItems];
+                const index = cartItems.findIndex((item) => item.id === action.payload);
+                if (index !== -1) {
+                    cartItems.splice(index, 1)
+                    return { ...state, cartItems };
+                }}
             break;
         default:
             return state;

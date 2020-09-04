@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import './Home.css'
 import { connect } from 'react-redux';
 import { fetchData } from '../redux/actions'
-import Sidebar from '../components/Sidebar';
-import HomePagination from '../components/paginations/HomePagination';
 import HomeCarousel from '../components/HomeCarousel';
 import List from '../components/cardColumns/List';
 import AboutUsPagination from '../components/paginations/AboutUsPagination';
@@ -29,7 +27,6 @@ const Home = (props) => {
     return (
         <div className="HomeMainDiv">
             <HomeCarousel />
-            <Sidebar/>
             <List data = {props.data}/>
             <AboutUsPagination/>
         </div>

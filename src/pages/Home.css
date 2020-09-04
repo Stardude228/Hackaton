@@ -10,7 +10,6 @@
     padding-top: 50px;
 }
 
-
 .HomeCarouselButtonFirst{
     background-color: #47555ea2;
     box-shadow: none;
@@ -72,9 +71,6 @@
 }
 
 .HomeMainPagination{
-    /* display: inline-block;
-    margin: 0 auto; */
-    /* margin-left: 650px;   */
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -87,7 +83,11 @@
     color: black;
 }
 
-
 .AboutUsMainDiv{
     margin-top: 80px !important;
 }
+
+.MainProductDetailDiv{
+    margin: 90px !important;
+}
+

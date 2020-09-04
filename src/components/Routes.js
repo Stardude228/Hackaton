@@ -3,20 +3,23 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Layout from '../components/Layout';
 
 //? Auth
-// const Login = React.lazy(() => import('../pages/auth/Login'));
-// const Logout = React.lazy(() => import('../pages/auth/Logout'));
-// const Register = React.lazy(() => import('../pages/auth/Register'));
+const Login = React.lazy(() => import('../pages/LoginPages/Login'));
+const Register = React.lazy(() => import('../pages/LoginPages/Register'));
+const Logout = React.lazy(() => import('../pages/LoginPages/Logout'));
+
 
 //? Pages
 const Home = React.lazy(() => import('../pages/Home'));
 const AboutUs = React.lazy(() => import('../pages/AboutUs'));
-// const AboutUs1 = React.lazy(() => import('../pages/AboutUsPages/AboutUs1'));
-// const AboutUs2 = React.lazy(() => import('../pages/AboutUsPages/AboutUs2'));
-// const AboutUs3 = React.lazy(() => import('../pages/AboutUsPages/AboutUs3'));
-// const AboutUs4 = React.lazy(() => import('../pages/AboutUsPages/AboutUs4'));
 const Sale = React.lazy(() => import('./navbar/sale/Sale'));
 const Contact = React.lazy(() => import('./navbar/contact/Contact'));
 const Blog = React.lazy(() => import('./navbar/blog/Blog'));
+const Audi = React.lazy(() => import('./navbar/catalog/cars/Audi'));
+const Bmw = React.lazy(() => import('./navbar/catalog/cars/Bmw'));
+const Lamborgini = React.lazy(() => import('./navbar/catalog/cars/Lamborgini'));
+const Catalog = React.lazy(() => import('./navbar/catalog/Catalog'));
+const About = React.lazy(() => import('./navbar/aboutUs/About'));
+const Payment = React.lazy(() => import('./navbar/payment/Payment'));
 
 //? Products
 const ProductDetail = React.lazy(() => import('../pages/ProductDetail'));
@@ -24,46 +27,87 @@ const ProductDetail = React.lazy(() => import('../pages/ProductDetail'));
 function Routes(props) {
     return (
         <BrowserRouter>
-            <Suspense fallback = {<div>Loading...</div>}>
+            <Suspense fallback={<div>Loading...</div>}>
                 <Switch>
-{/* 
-                    <Route exact path="/auth/Login" component = {Login}/>
-                    <Route exact path="/auth/Logout" component = {Logout}/>
-                    <Route exact path="/auth/Register" component = {Register}/> */}
 
+                    //? Routes to Home/Products links
                     <Route exact path="/">
-                        <Layout>    
-                            <Home props = {props} />
+                        <Layout>
+                            <Home props={props} />
                         </Layout>
                     </Route>
-
                     <Route exact path="/about-us/:id">
                         <Layout>
-                            <AboutUs/>
+                            <AboutUs />
                         </Layout>
                     </Route>
-
-                    <Route exact path="/blog">
+                    <Route exact path="/products/:id">
                         <Layout>
-                            <Blog/>
+                            <ProductDetail />
                         </Layout>
                     </Route>
 
+                    //? Routes to Login links
+                    <Route exact path="/auth/login">
+                        <Layout>
+                            <Login />
+                        </Layout>
+                    </Route>
+                    <Route exact path="/auth/register">
+                        <Layout>
+                            <Register />
+                        </Layout>
+                    </Route>
+                    <Route exact path="/auth/logout">
+                        <Layout>
+                            <Logout />
+                        </Layout>
+                    </Route>
+
+                    //? Routes to Navbars links
                     <Route exact path="/contact">
                         <Layout>
-                            <Contact/>
+                            <Contact />
                         </Layout>
                     </Route>
-
+                    <Route exact path="/about">
+                        <Layout>
+                            <About />
+                        </Layout>
+                    </Route>
+                    <Route exact path="/catalog">
+                        <Layout>
+                            <Catalog />
+                        </Layout>
+                    </Route>
+                    <Route exact path="/lamborgini">
+                        <Layout>
+                            <Lamborgini />
+                        </Layout>
+                    </Route>
+                    <Route exact path="/bmw">
+                        <Layout>
+                            <Bmw />
+                        </Layout>
+                    </Route>
+                    <Route exact path="/audi">
+                        <Layout>
+                            <Audi />
+                        </Layout>
+                    </Route>
                     <Route exact path="/sale">
                         <Layout>
-                            <Sale/>
+                            <Sale />
                         </Layout>
                     </Route>
-
-                    <Route exact path="/products/:slug">
+                    <Route exact path="/blog">
                         <Layout>
-                            <ProductDetail/>
+                            <Blog />
+                        </Layout>
+                    </Route>
+                    <Route exact path="/pay">
+                        <Layout>
+                            <Payment />
                         </Layout>
                     </Route>
 

@@ -1,10 +1,12 @@
 .HeaderMainDiv {
     background-color: rgba(167, 164, 164, 0.856) !important;
     color: white;
+    display: flex;
+    justify-content: space-between;
 }
 .HeaderNavbarBrand {
+    margin-left: 20px;
     color: white !important;
-    align-items: center;
 }
 
 .HeaderLogo {
@@ -14,6 +16,42 @@
 .HeaderNavlinks {
     color: white !important;
 } 
-#basic-nav-dropdown {
+
+.MainSidebardropdown{
+    background: #5a626891 !important;
+    width: 100px !important;
+    z-index: 2 !important;
+    margin-top: 10px;
+    margin-left: 20px;
+    position: absolute !important;
+}
+
+.NavbarImage{
+    width: 20px;
+    height: 20px;
+}
+
+.SidebarLinks{
     color: white !important;
-} 
+}
+
+.SidebarCatalogsDropdownMenu{
+    background: #5a626891 !important;
+    width: 20px !important;
+}
+
+.CatalogsLinks{
+    padding: 10px;
+    width: 10px !important;
+}
+
+.CatalogsLinks{
+    color: white !important;
+    width: 2px !important;
+}
+
+.cartIconButton{
+    margin-top: 2px; 
+    width: 50px;
+    height: 55px;
+}

@@ -12,9 +12,10 @@ const Side = props => {
 
     return (
         <div > 
-            <Nav 
-                className="col-md-1 d-none d-md-block bg-light sidebar"
-                activeKey="/"
+
+            <Nav className="col-md-1 d-none d-md-block bg-light sidebar"
+            activeKey="/"
+          
             >
                 <div className="sidebar-sticky"></div>
             <Nav.Item>
@@ -29,20 +30,20 @@ const Side = props => {
             <Nav.Item>
             <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                    Каталог
+                  Каталог
                 </DropdownToggle>
                 <DropdownMenu right>
-                    <DropdownItem>Option 1</DropdownItem>
-                    <DropdownItem>Option 2</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Reset</DropdownItem>
+                  <DropdownItem>Option 1</DropdownItem>
+                  <DropdownItem>Option 2</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>Reset</DropdownItem>
                 </DropdownMenu>
-                </UncontrolledDropdown>
+              </UncontrolledDropdown>
             </Nav.Item>
             </Nav>
 
         </div>
         );
-};
-const Sidebar = withRouter(Side);
-export default Sidebar
+  };
+  const Sidebar = withRouter(Side);
+  export default Sidebar
