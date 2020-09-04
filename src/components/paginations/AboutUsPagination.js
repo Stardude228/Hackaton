@@ -10,7 +10,6 @@ import { Link, useLocation } from 'react-router-dom';
 function AboutUsPagination() {
     const location = useLocation();
     const search = new URLSearchParams(location.search);
-    // console.log(search.get("page"))
     const createPaginations = ()=>{
         const total = parseInt(localStorage.getItem("totalCount"));
         let arr = [];

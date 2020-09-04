@@ -1,63 +1,319 @@
 import React from "react";
 import {
-  Container,
-  CardColumns,
-  Card,
-  CardImg,
-  Button,
-} from "react-bootstrap";
-import { CardBody, CardSubtitle, CardText, CardTitle } from "reactstrap";
+  MDBRow,
+  MDBCol,
+  MDBCard,
+  MDBCardBody,
+  MDBMask,
+  MDBIcon,
+  MDBView,
+} from "mdbreact";
+// import { NavLink } from "react-router-dom";
 
 function Sale() {
   return (
-    <Container className = "mt-5">
-        <CardColumns>
-                <Card>
-                        <CardImg top width="100%" src="https://images.hdqwalls.com/wallpapers/lamborghini-huracan-evo-2019-4k-dz.jpg" alt="Card image cap" />
-                        <CardBody>
-                            <CardTitle>Lamborghini</CardTitle>
-                            <CardSubtitle>Little info about Lamborghini</CardSubtitle>
-                            <CardText>Automobili Lamborghini S.p.A. is an Italian brand and manufacturer of luxury sports cars and SUVs based in Sant'Agata Bolognese.
-                                    The company is owned by the Volkswagen Group through its subsidiary Audi.</CardText>
-                            <Button>Get more info</Button>
-                        </CardBody>
-                    </Card>
+    <MDBCard
+      className="my-5 px-5 mx-auto"
+      style={{ fontWeight: 300, maxWidth: "90%" }}
+    >
+      <MDBCardBody style={{ paddingTop: 0 }}>
+        <h2 className="h1-responsive font-weight-bold my-5 text-center">
+        Акции на автомобили
+        </h2>
+        <p className="dark-grey-text mx-auto mb-5 w-75 text-center">
+        Оцените этот автомобиль сами — просто запишитесь на тест-драйв в удобное для Вас время.
 
-                    <Card>
-                        <CardImg top width="100%" src="https://images.hdqwalls.com/wallpapers/red-bugatti-chiron-sport-2018-4k-3u.jpg" alt="Card image cap" />
-                        <CardBody>
-                            <CardTitle>Bugatti</CardTitle>
-                            <CardSubtitle>Little info about Bugatti</CardSubtitle>
-                            <CardText>Automobiles Ettore Bugatti was a French car manufacturer of high-performance automobiles, founded in 1909 in the then-German city of Molsheim, Alsace by the Italian-born industrial designer Ettore Bugatti.
-                                The cars were known for their design beauty and for their many race victories.</CardText>
-                            <Button>Get more info</Button>
-                        </CardBody>
-                    </Card>
+        </p>
+        <MDBRow>
+          <MDBCol lg="6" md="12">
+            <div
+              style={{
+                borderBottom: "1px solid #e0e0e0",
+                marginBottom: "1.5rem",
+              }}
+            >
+              <MDBView hover rounded className="z-depth-1-half mb-4">
+                <img
+                  className="img-fluid"
+                  src="https://autoreview.ru/images/Article/1694/Article_169493_860_575.jpg"
+                  alt=""
+                />
+                <a href="#!">
+                  <MDBMask overlay="white-slight" className="waves-light" />
+                </a>
+              </MDBView>
+              <div className="d-flex justify-content-between">
+                <a href="#!" className="light-blue-text">
+                  <h6 className="font-weight-bold">
+                    <MDBIcon icon="plane" className="pr-2" />
+                    Cars
+                  </h6>
+                </a>
+                <p className="font-weight-bold dark-grey-text">
+                  <MDBIcon far icon="clock" className="pr-2" />
+                  20/08/2020
+                </p>
+              </div>
+              <h3 className="font-weight-bold dark-grey-text mb-3 p-0">
+                <a href="#!">Cadillac</a>
+              </h3>
+              <p className="dark-grey-text">
+                CADILLAC ESCALADE PLATINUM ДЛЯ ТЕХ, КТО ЦЕНИТ. ВЫГОДА ОТ 1200000
+                РУБ. Cadillac Escalade Platinum c выгодой от 1 200 000 руб.
+              </p>
+            </div>
 
-                    <Card>
-                        <CardImg top width="100%" src="https://www.hdcarwallpapers.com/walls/ferrari_f8_tributo_2019_4k_5k_2-HD.jpg" alt="Card image cap" />
-                        <CardBody>
-                            <CardTitle>Ferrari</CardTitle>
-                            <CardSubtitle>Little info about Ferrari</CardSubtitle>
-                            <CardText>Ferrari is an Italian luxury sports car manufacturer based in Maranello, Italy.
-                            Founded by Enzo Ferrari in 1939 out of Alfa Romeo's race division as Auto Avio Costruzioni, the company built its first car in 1940.
-                                However, the company's inception as an auto manufacturer is usually recognized in 1947, when the first Ferrari-badged car was completed.</CardText>
-                            <Button>Get more info</Button>
-                        </CardBody>
-                    </Card>
+            <div
+              style={{
+                borderBottom: "1px solid #e0e0e0",
+                marginBottom: "1.5rem",
+              }}
+            >
+              <MDBRow>
+                <MDBCol md="3">
+                  <MDBView hover rounded className="z-depth-1-half mb-4">
+                    <img
+                      className="img-fluid"
+                      src="https://mdbootstrap.com/img/Photos/Others/photo8.jpg"
+                      alt=""
+                    />
+                    <a href="#!">
+                      <MDBMask overlay="white-slight" className="waves-light" />
+                    </a>
+                  </MDBView>
+                </MDBCol>
+                <MDBCol md="9">
+                  <p className="font-weight-bold dark-grey-text">19/08/2018</p>
+                  <div className="d-flex justify-content-between">
+                    <MDBCol size="11" className="text-truncate pl-0 mb-3">
+                      <a href="#!" className="dark-grey-text">
+                        
+                      </a>
+                    </MDBCol>
+                    <a href="#!">
+                      <MDBIcon icon="angle-double-right" />
+                    </a>
+                  </div>
+                </MDBCol>
+              </MDBRow>
+            </div>
 
-                </CardColumns>
+            <div
+              style={{
+                borderBottom: "1px solid #e0e0e0",
+                marginBottom: "1.5rem",
+              }}
+            >
+              <MDBRow>
+                <MDBCol md="3">
+                  <MDBView hover rounded className="z-depth-1-half mb-4">
+                    <img
+                      className="img-fluid"
+                      src="https://mdbootstrap.com/img/Photos/Others/images/54.jpg"
+                      alt=""
+                    />
+                    <a href="#!">
+                      <MDBMask overlay="white-slight" className="waves-light" />
+                    </a>
+                  </MDBView>
+                </MDBCol>
+                <MDBCol md="9">
+                  <p className="font-weight-bold dark-grey-text">18/08/2018</p>
+                  <div className="d-flex justify-content-between">
+                    <MDBCol size="11" className="text-truncate pl-0 mb-3">
+                      <a href="#!" className="dark-grey-text">
+                        Soluta nobis est eligendi optio cumque nihil impedit quo
+                        minus
+                      </a>
+                    </MDBCol>
+                    <a href="#!">
+                      <MDBIcon icon="angle-double-right" />
+                    </a>
+                  </div>
+                </MDBCol>
+              </MDBRow>
+            </div>
 
-    </Container>
+            <div className="mb-4">
+              <MDBRow>
+                <MDBCol md="3">
+                  <MDBView hover rounded className="z-depth-1-half mb-4">
+                    <img
+                      className="img-fluid"
+                      src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg"
+                      alt=""
+                    />
+                    <a href="#!">
+                      <MDBMask overlay="white-slight" className="waves-light" />
+                    </a>
+                  </MDBView>
+                </MDBCol>
+                <MDBCol md="9">
+                  <p className="font-weight-bold dark-grey-text">17/08/2018</p>
+                  <div className="d-flex justify-content-between">
+                    <MDBCol size="11" className="text-truncate pl-0 mb-3">
+                      <a href="#!" className="dark-grey-text">
+                        Voluptatem accusantium doloremque
+                      </a>
+                    </MDBCol>
+                    <a href="#!">
+                      <MDBIcon icon="angle-double-right" />
+                    </a>
+                  </div>
+                </MDBCol>
+              </MDBRow>
+            </div>
+          </MDBCol>
+
+          <MDBCol lg="6" md="12">
+            <div
+              style={{
+                borderBottom: "1px solid #e0e0e0",
+                marginBottom: "1.5rem",
+              }}
+            >
+              <MDBView hover rounded className="z-depth-1-half mb-4">
+                <img
+                  className="img-fluid"
+                  src="https://favorit-motors.ru/upload/resize_cache/fm/7cf35d1eba5df46c8cea1f9a7926d47d...1.webp"
+                  alt=""
+                />
+                <a href="#!">
+                  <MDBMask overlay="white-slight" className="waves-light" />
+                </a>
+              </MDBView>
+              <div className="d-flex justify-content-between">
+                <a href="#!" className="pink-text">
+                  <h6 className="font-weight-bold">
+                    <MDBIcon icon="home" className="pr-2" />
+                    Cars
+
+                  </h6>
+                </a>
+                <p className="font-weight-bold dark-grey-text">
+                  <MDBIcon far icon="clock" className="pr-2" />
+                  24/08/2020
+                </p>
+              </div>
+              <h3 className="font-weight-bold dark-grey-text mb-3 p-0">
+                <a href="#!">Volkswagen Passat New</a>
+              </h3>
+              <p className="dark-grey-text">
+              Фольксваген Passat New
+              </p>
+            </div>
+
+            <div
+              style={{
+                borderBottom: "1px solid #e0e0e0",
+                marginBottom: "1.5rem",
+              }}
+            >
+              <MDBRow>
+                <MDBCol md="3">
+                  <MDBView hover rounded className="z-depth-1-half mb-4">
+                    <img
+                      className="img-fluid"
+                      src="https://mdbootstrap.com/img/Photos/Others/images/86.jpg"
+                      alt=""
+                    />
+                    <a href="#!">
+                      <MDBMask overlay="white-slight" className="waves-light" />
+                    </a>
+                  </MDBView>
+                </MDBCol>
+                <MDBCol md="9">
+                  <p className="font-weight-bold dark-grey-text">23/08/2018</p>
+                  <div className="d-flex justify-content-between">
+                    <MDBCol size="11" className="text-truncate pl-0 mb-3">
+                      <a href="#!" className="dark-grey-text">
+                        Itaque earum rerum hic tenetur a sapiente delectus
+                      </a>
+                    </MDBCol>
+                    <a href="#!">
+                      <MDBIcon icon="angle-double-right" />
+                    </a>
+                  </div>
+                </MDBCol>
+              </MDBRow>
+            </div>
+
+            <div
+              style={{
+                borderBottom: "1px solid #e0e0e0",
+                marginBottom: "1.5rem",
+              }}
+            >
+              <MDBRow>
+                <MDBCol md="3">
+                  <MDBView hover rounded className="z-depth-1-half mb-4">
+                    <img
+                      className="img-fluid"
+                      src="https://mdbootstrap.com/img/Photos/Others/images/48.jpg"
+                      alt=""
+                    />
+                    <a href="#!">
+                      <MDBMask overlay="white-slight" className="waves-light" />
+                    </a>
+                  </MDBView>
+                </MDBCol>
+                <MDBCol md="9">
+                  <p className="font-weight-bold dark-grey-text">22/08/2018</p>
+                  <div className="d-flex justify-content-between">
+                    <MDBCol size="11" className="text-truncate pl-0 mb-3">
+                      <a href="#!" className="dark-grey-text">
+                        Soluta nobis est eligendi optio cumque nihil impedit quo
+                        minus
+                      </a>
+                    </MDBCol>
+                    <a href="#!">
+                      <MDBIcon icon="angle-double-right" />
+                    </a>
+                  </div>
+                </MDBCol>
+              </MDBRow>
+            </div>
+
+            <div className="mb-4">
+              <MDBRow>
+                <MDBCol md="3">
+                  <MDBView hover rounded className="z-depth-1-half mb-4">
+                    <img
+                      className="img-fluid"
+                      src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(56).jpg"
+                      alt=""
+                    />
+                    <a href="#!">
+                      <MDBMask overlay="white-slight" className="waves-light" />
+                    </a>
+                  </MDBView>
+                </MDBCol>
+                <MDBCol md="9">
+                  <p className="font-weight-bold dark-grey-text">21/08/2018</p>
+                  <div className="d-flex justify-content-between">
+                    <MDBCol size="11" className="text-truncate pl-0 mb-3">
+                      <a href="#!" className="dark-grey-text">
+                        Maiores alias consequatur aut perferendis
+                      </a>
+                    </MDBCol>
+                    <a href="#!">
+                      <MDBIcon icon="angle-double-right" />
+                    </a>
+                  </div>
+                </MDBCol>
+              </MDBRow>
+            </div>
+          </MDBCol>
+        </MDBRow>
+      </MDBCardBody>
+    </MDBCard>
   );
 }
 
 export default Sale;
 
-
-
-
-{/* <TabContainer id="ledt-tabs-example" defaultActiveKey="first">
+{
+  /* <TabContainer id="ledt-tabs-example" defaultActiveKey="first">
         <Row>
           <Col sm={3}>
             <Nav variant="pills" className="flex-column mt-2">
@@ -98,4 +354,5 @@ export default Sale;
             </TabContent>
           </Col>
         </Row>
-      </TabContainer> */}
+      </TabContainer> */
+}

@@ -10,37 +10,36 @@ import {
     Button,
 } from 'reactstrap'
 import { useHistory } from 'react-router-dom';
+import '../../pages/Home.css'
+import { addItemToCart } from '../../redux/actions'
+import { connect } from 'react-redux';
 
 function HomeCardColumns(props) {
 
     const { item } = props;
-    // console.log(props);
-
     const history = useHistory();
 
-
-    // const item = props.props.data;
-    // console.log(item)
-
-
-    // const handleProductDetail = (id) => {
-    //     history.replace(`/posts/${item + [id]}`)
-    // }
+    const handleClick = (e, item) => {
+        e.stopPropagation()
+        props.addItemToCart(item)
+    }
 
     return (
-        <Card className="mt-4">
+        <Card className="HomeMainCard mt-4">
             <CardImg top width="100%" src={item.image} alt="Card image cap" />
             <CardBody>
                 <CardTitle>{item.title}</CardTitle>
                 <CardSubtitle>Little info about {item.title}</CardSubtitle>
                 <CardText>{item.comment}</CardText>
                 <ButtonGroup>
-                    <Button>Get more info</Button>
-                    <Button color="primary">Purchase {item.price}</Button>
+                    <Button onClick={() => history.replace('/products/' + item.id)}>Get more info</Button>
+                    <Button onClick = {(e) => handleClick(e, item)} color="primary">Purchase {item.price} $</Button>
                 </ButtonGroup>
             </CardBody>
         </Card>
     )
 }
-            
-export default HomeCardColumns
+
+const mapStateToProps = state => state.CartReducer;
+
+export default connect( mapStateToProps, { addItemToCart })(HomeCardColumns)

@@ -1,36 +1,50 @@
 import React, { } from 'react';
 
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
-import { NavbarToggler,  NavbarBrand, Nav, Form, Button, NavLink } from 'reactstrap';
+import { NavbarToggler, NavbarBrand, Form, Button } from 'reactstrap';
 
-import {Navbar, NavDropdown, FormControl } from 'react-bootstrap';
+import { Navbar, FormControl } from 'react-bootstrap';
 import './Header.css'
 import WheelSvg from '../assets/icons/wheel.svg'
+import { Link } from 'react-router-dom';
+import Sidebar from './Sidebar';
+import Cart from './Cart';
 
 function Header() {
-return (
-    <div className="HeaderMainDiv fixed-top">
-    <Navbar>
-    <NavbarBrand className="HeaderNavbarBrand" href="/"> <img src={WheelSvg} className="HeaderLogo"></img> Online Cars Shop</NavbarBrand>
-    <NavbarToggler aria-controls="basic-navbar-nav" />
-    <NavbarCollapse id="basic-navbar-nav">
-    <Nav className="mr-auto">
-        <NavLink className = "HeaderNavlinks" href="/">Home</NavLink>
-        <NavLink className = "HeaderNavlinks" href="/about-us">Link</NavLink>
-        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-        <NavLink href="/about-us/2">Collection</NavLink>
-        <NavLink href="/about-us/3">Collection</NavLink>
-        <NavLink href="/about-us/4">Collection</NavLink>
-        </NavDropdown>
-        
-    </Nav>
-    <Form inline>
-        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-        <Button variant="outline-success">Search</Button>
-    </Form>
-    </NavbarCollapse>
-    </Navbar>
-    </div>
+    return (
+        <div className="HeaderMainDiv fixed-top">
+            <div className="d-flex">
+                <NavbarBrand className="HeaderNavbarBrand mt-3" href="/"> <img src={WheelSvg} className="HeaderLogo"></img> Online Cars Shop</NavbarBrand>
+                <Sidebar />
+            </div>
+            <div className = "d-flex">
+                <Cart />
+                <Navbar>
+                    <NavbarToggler aria-controls="basic-navbar-nav" />
+                    <NavbarCollapse id="basic-navbar-nav">
+                        <div className="mr-auto nav">
+                        </div>
+                        <Form inline>
+                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                            <Button variant="outline-success">Search</Button>
+                            {!!localStorage.getItem("token") ? (
+                                <Link to="/auth/logout">
+                                    <Button className="bg-danger">
+                                        Logout
+                                    </Button>
+                                </Link>
+                            ) : (
+                                <Link to="/auth/login">
+                                    <Button className="bg-danger">
+                                        Login
+                                    </Button>
+                                </Link>
+                            )}
+                        </Form>
+                    </NavbarCollapse>
+                </Navbar>
+            </div>
+        </div>
     )
 }
 
