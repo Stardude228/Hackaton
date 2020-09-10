@@ -4,23 +4,28 @@ import {
     PaginationItem,
     PaginationLink,
 } from 'reactstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 
 
 function AboutUsPagination() {
+    
     const location = useLocation();
+    const history = useHistory();
     const search = new URLSearchParams(location.search);
+    const handleClick = (id)=>{
+        search.set("page", id);
+        history.replace("/?"+search.toString());
+    }
+
     const createPaginations = ()=>{
         const total = parseInt(localStorage.getItem("totalCount"));
         let arr = [];
         for(let i = 1; i <= Math.round(total/6); i++){
             arr.push(
                 <PaginationItem key={i + "-pagination-item"} active={search.get("page") === i.toString()}>
-                    <Link to={`/?page=${i}`}>
-                        <PaginationLink className="HomePaginationLinks">
-                            {i}
-                        </PaginationLink>
-                    </Link>
+                    <PaginationLink onClick={()=>handleClick(i)} className="HomePaginationLinks">
+                        {i}
+                    </PaginationLink>
                 </PaginationItem>
             )
         }

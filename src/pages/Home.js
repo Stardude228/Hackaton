@@ -12,9 +12,7 @@ const Home = (props) => {
 
     useEffect(() => {
         const search = new URLSearchParams(location.search);
-        const page = search.get("page");
-
-        props.fetchData(page || 0);
+        props.fetchData(search);
     }, [location]);
 
     if(props.error){
@@ -27,6 +25,7 @@ const Home = (props) => {
     return (
         <div className="HomeMainDiv">
             <HomeCarousel />
+            {console.log(props)}
             <List data = {props.data}/>
             <AboutUsPagination/>
         </div>

@@ -19,14 +19,13 @@ function Header() {
                 <Sidebar />
             </div>
             <div className = "d-flex">
-                {!!localStorage.getItem("token") ? (<Cart />) : (<div></div>)}
+                {!!localStorage.getItem("token") ? (<Cart />) : (<div />)}
                 <Navbar>
                     <NavbarToggler aria-controls="basic-navbar-nav" />
+                    <div className="mr-auto nav">
                     <NavbarCollapse id="basic-navbar-nav">
-                        <div className="mr-auto nav">
-                        </div>
+                        <SearchExample/>
                         <Form inline>
-                            <SearchExample/>
                             {!!localStorage.getItem("token") ? (
                                 <Link to="/auth/logout">
                                     <Button className=" mb-4 bg-danger">
@@ -42,6 +41,7 @@ function Header() {
                             )}
                         </Form>
                     </NavbarCollapse>
+                    </div>
                 </Navbar>
             </div>
         </div>

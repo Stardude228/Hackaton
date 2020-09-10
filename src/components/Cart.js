@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import cartSvg from '../assets/icons/supermarket.svg'
 import {
     Card,
-    CardImg,
     CardTitle,
     CardText,
-    CardSubtitle,
     CardBody,
     Button,
     Modal,

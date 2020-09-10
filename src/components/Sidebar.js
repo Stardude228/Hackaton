@@ -11,6 +11,7 @@ import {
   DropdownMenu,
 } from "reactstrap";
 import '../components/Header.css'
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(true);
@@ -27,34 +28,34 @@ const Sidebar = () => {
           <Collapse className="myNavbarCollapse" isOpen={!collapsed} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink className="SidebarLinks" href="/sale">Sales</NavLink>
+                <Link className="SidebarLinks nav-link" to="/sale">Sales</Link>
               </NavItem>
               <NavItem>
-                <NavLink className="SidebarLinks" href="/blog">Blog</NavLink>
+                <Link className="SidebarLinks nav-link" to="/blog">Blog</Link>
               </NavItem>
               <NavItem>
-                <NavLink className="SidebarLinks" href="/about">About Us</NavLink>
+                <Link className="SidebarLinks nav-link" to="/about">About Us</Link>
               </NavItem>
               <NavItem>
-                <NavLink className="SidebarLinks" href="/pay">Payment</NavLink>
+                <Link className="SidebarLinks nav-link" to="/pay">Payment</Link>
               </NavItem>
               <NavItem>
-                <NavLink className="SidebarLinks" href="/contact">Contacts</NavLink>
+                <Link className="SidebarLinks nav-link" to="/contact">Contacts</Link>
               </NavItem>
-              <NavItem href="/catalog">
+              <NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle className="SidebarLinks" nav caret>
                     Catalog
                   </DropdownToggle>
                   <DropdownMenu className = "SidebarCatalogsDropdownMenu">
                     <NavItem>
-                      <NavLink className="CatalogsLinks" href="/audi">Audi</NavLink>
+                      <Link className="CatalogsLinks" to="/audi">Audi</Link>
                     </NavItem>
                     <NavItem>
-                      <NavLink className="CatalogsLinks" href="/bmw">BMW</NavLink>
+                      <Link className="CatalogsLinks" to="/bmw">BMW</Link>
                     </NavItem>
                     <NavItem>
-                      <NavLink className="CatalogsLinks" href="/lamborgini">Lamborgini</NavLink>
+                      <Link className="CatalogsLinks" to="/lamborgini">Lamborgini</Link>
                     </NavItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
