@@ -8,6 +8,7 @@ import AboutUsPagination from '../components/paginations/AboutUsPagination';
 import { useLocation } from 'react-router-dom';
 
 const Home = (props) => {
+    
     const location = useLocation();
 
     useEffect(() => {
