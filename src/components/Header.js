@@ -19,6 +19,7 @@ function Header() {
                 <Sidebar />
             </div>
             <div className = "d-flex">
+            <Cart/>
                 {!!localStorage.getItem("token") ? (<Cart />) : (<div />)}
                 <Navbar>
                     <NavbarToggler aria-controls="basic-navbar-nav" />
